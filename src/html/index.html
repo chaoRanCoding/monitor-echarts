@@ -1,0 +1,150 @@
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <title>云Cloud</title>
+    <link href="../public/css/bass.css" rel="stylesheet">
+    <link href="../public/css/index.css" rel="stylesheet">
+    <link href="http://at.alicdn.com/t/font_466878_ijzkncytd5oh6w29.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="chartsBox">
+            <div id="left">         
+              <!-- 历史订单 -->
+                <div class='selectBox'> 
+                <span class='chartsTitle'>历史订单</span>   
+                <div class='dataBox'>
+                  <select id="dateType"  onchange="dateChange(1)" class="data">                 
+                    <option value="4">年</option>
+                    <option value="3">季</option>
+                    <option value="2">月</option>
+                    <option value="1">日</option>
+                  </select>
+                  <select onchange="starChange(1)" id="starData" class="data">
+                  </select>
+                </div>
+                </div>
+                <div id="a" class='charts'></div>
+
+                <!-- 历史订单金额 -->
+                <div class='selectBox'> 
+                <span class='chartsTitle'>历史订单金额</span> <div class='dataBox'>
+                    <select id="dateType2"  onchange="dateChange(2)" class="data">
+                      <option value="4">年</option>
+                      <option value="3">季</option>
+                      <option value="2">月</option>
+                      <option value="1">日</option>
+                    </select>
+                    <select onchange="starChange(2)" id="starData2" class="data">
+                    </select>
+                  </div>
+                </div>
+                <div id='b' class='charts'></div>
+
+                <!-- 历史电量 -->
+                <div class='selectBox'> 
+                <span class='chartsTitle'>历史充电量</span>   <div class='dataBox'>
+                     <select id="dateType3"  onchange="dateChange(3)" class="data">                 
+                      <option value="4">年</option>
+                      <option value="3">季</option>
+                      <option value="2">月</option>
+                      <option value="1">日</option>
+                    </select>
+                    <select onchange="starChange(3)" id="starData3" class="data">
+                    </select>
+                  </div>
+                </div>
+                <div id="c" class='charts'></div>
+
+                <!-- 历史订单设备类型 -->
+                <div class='selectBox'> 
+                <span class='chartsTitle'>历史设备类型</span>  <div class='dataBox'>
+                     <select id="dateType4"  onchange="dateChange(4)" class="data">                 
+                      <option value="4">年</option>
+                      <option value="3">季</option>
+                      <option value="2">月</option>
+                      <option value="1">日</option>
+                    </select>
+                    <select onchange="starChange(4)" id="starData4" class="data">
+                    </select>
+                </div>
+                </div>
+                <div id="d" class='charts h22'></div>
+            </div>
+            <!-- 地图 -->
+            <div class='topMid'>
+              <div class='allBox'>
+                  <div class='allItem'>
+                      <div class='itemName'><i class='iconfont icon-fonts-shandian'></i>总电量</div> 
+                      <div class='itemCount' id='sumElectricity'></div>   
+                  </div>
+                  <div class='allItem'>
+                      <div class='itemName'><i class='iconfont icon-shouyi'></i>收益余额</div> 
+                      <div class='itemCount' id='sumBalance'></div> 
+                  </div>
+                  <div class='allItem'>
+                      <div class='itemName'><i class='iconfont icon-chongdianzhuang'></i>电桩总数</div> 
+                      <div class='itemCount' id='countDevice'></div> 
+                  </div>
+                  <div class='allItem'>
+                      <div class='itemName'><i class='iconfont icon-dingdan'></i>订单总数</div> 
+                      <div class='itemCount' id='countOrder'></div> 
+                  </div>  
+              </div>
+              <div id="map" ></div>
+            </div>
+          
+           <div id="right" >
+            <!-- 今日订单 -->
+             <div class='selectBox'> 
+                <span class='chartsTitle'>今日订单</span>   
+              </div>
+                <div id="e" class='charts'></div>
+                <!-- 今日类型 -->
+                <div class='selectBox'> 
+                <span class='chartsTitle'>今日订单金额</span> </div>
+                <div id='f' class='charts'></div>
+
+                 <!-- 今日订单充电量 -->
+                <div class='selectBox'> 
+                <span class='chartsTitle'>今日订单充电量</span> </div>
+                <div id="g" class='charts'></div>
+
+                 <!-- 今日订单设备类型 -->
+                <div class='selectBox'> 
+                <span class='chartsTitle setMultiple'>今日订单设备类型</span> </div>
+                <div id="h" class='charts h22'></div>
+           </div>
+    </div>
+    <div class="orderBox">
+            <div class="item">
+              <div class="hdBg"><i class='iconfont icon-jinggao'></i>警告</div>
+                <div class="infoBox waringBox">
+
+                </div>
+                
+            </div>
+            <div class="mid">
+                <div class="hdBg"><i class='iconfont icon-dongtai'></i>实时动态信息</div>
+                <div class="infoBox activeBox">
+                </div>
+            </div>
+            <div class="item">
+                <div class="hdBg"><i class='iconfont icon-fonts-shandian'></i>订单充电信息</div>
+                <div class="infoBox evcharBox">
+                    
+                </div>
+            </div>
+        
+    </div>
+</div>
+    </div>
+    <script src="../public/js/jquery-1.11.3.js"></script>
+    <script src="../public/js/countUp.js"></script>
+    <script src="../public/js/echarts.js"></script>
+    <script src="../public/js/dark.js"></script>
+    <script src="../public/js/china.js"></script>
+    <script src="../public/js/bmqtt.js"></script>
+    <script src="../public/js/index.js"></script>
+  </body>
+</html>
